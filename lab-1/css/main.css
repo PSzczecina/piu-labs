@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(
+    160deg,
+    darkgoldenrod,
+    gold 20%,
+    bisque 50%,
+    gold 70%,
+    darkgoldenrod
+  );
+}
+
+h1 {
+  font-size: 45px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: gold;
+  width: 40%;
+  height: 30vh;
+  box-shadow: 3px 3px 10px black;
+  border-radius: 20%;
+}
+
+a {
+  font-size: 20px;
+  display: block;
+  padding-top: 70px;
+  color: black;
+  text-decoration: none;
+  &:hover {
+    color: darkblue;
+  }
+}
+
+nav a {
+  padding-top: 0;
+  font-size: 26px;
+  color: black;
+  font-weight: bold;
+  transition: letter-spacing 0.5s;
+  width: 40%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-decoration: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  &:hover {
+    color: darkred;
+    transition: letter-spacing 0.2s, background-image 1s;
+    letter-spacing: 5px;
+    background-image: radial-gradient(bisque 5%, rgba(0, 0, 0, 0) 80%);
+  }
+}
+
+form {
+  border-radius: 20%;
+  width: 30%;
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+  height: 25vh;
+  background-color: gold;
+  box-shadow: 3px 3px 10px black;
+  div {
+    margin-left: 10%;
+    padding-top: 20px;
+    text-align: left;
+    font-size: 20px;
+  }
+  input {
+    background-color: bisque;
+    width: 50%;
+    height: 25px;
+  }
+  button {
+    transition: background-color 0.2s, color 0.2s;
+    border-radius: 20%;
+    color: gold;
+    font-size: 20px;
+    background-color: brown;
+    margin-top: 20px;
+    width: 50%;
+    height: 30px;
+    &:hover {
+      cursor: pointer;
+      background-color: darkred;
+      color: bisque;
+    }
+  }
+}
+
+section {
+  box-shadow: -2px 2px 5px darkred;
+  border-bottom-left-radius: 20%;
+  background-image: linear-gradient(
+    to right,
+    darkgoldenrod 40%,
+    rgba(0, 0, 0, 0) 95%
+  );
+  border-bottom: 5px ridge goldenrod;
+  border-left: 2px ridge goldenrod;
+  text-align: left;
+  margin-left: 10%;
+  padding-left: 30px;
+  margin-right: 10%;
+  padding-right: 10%;
+  margin-top: 30px;
+  padding-top: 2px;
+  font-size: 18px;
+  h3 {
+    padding-left: 10%;
+    text-align: center;
+  }
+}
+
+footer {
+  padding: 5px;
+  font-size: 10px;
+  height: 5vh;
+  margin: 0;
+  margin-top: 100px;
+  background-color: darkred;
+  a {
+    color: bisque;
+    padding: 0;
+  }
+}

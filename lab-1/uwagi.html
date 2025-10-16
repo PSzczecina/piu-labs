@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Uwagi</title>
+  </head>
+  <body>
+    <h1>Uwagi odnośnie formularzy</h1>
+    <section>
+      <p>
+        Na stronie Httpbin zauważyłem, że jak w formularzu wysyłane są słowa ze
+        znakami diakrytycznymi to zapisywane są jako "\u####", gdzie "#" to
+        cyfra. W URL zaś wyświetlają się one normalnie.
+      </p>
+      <p>
+        Niektóre elementy walidacji wydają się za proste, np. w emailu można się
+        pokusić o coś więcej niż walidację "znak-@-znak".
+      </p>
+    </section>
+    <section>
+      <h3>Plusy czystego formualrza HTML</h3>
+      <ul>
+        <li>
+          Formularz będzie działać na nowoczesnej przeglądarce bez większego
+          problemu, nawet gdy ktoś ma wyłączony JS
+        </li>
+        <li>
+          Podstawowe walidajce są dostępne na poziomie html (np. zakresy
+          liczbowe czy obowiązkowość pola)
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h3>Minusy formualrza HTML bez JS</h3>
+      <ul>
+        <li>
+          Brak zaawansowanej logiki, np. dynamicznej walidacji czy zmiany
+          elementów formularza po interakcji
+        </li>
+        <li>
+          Są właściwości które można wykonać tylko przy pomocy JS, np. wysłanie
+          formualrza bez odświeżania strony
+        </li>
+        <li>Kwestje zabezpieczeń powinny być kontrolowane na serwerze</li>
+      </ul>
+    </section>
+    <section>
+      <p>
+        Sam formularz HTML wystarczy przy prostych, statycznych stronach lub gdy
+        dane mogą być bezpośrednio wysyłane do serwera bez dalszej przeróbki.
+      </p>
+      <p>
+        Jeśli chcemy dynamicznej walidacji lub bardziej zaawansowanej logiki,
+        powinno się sięgnąć po JS.
+      </p>
+    </section>
+    <footer>
+      <p><a href="..">Powrót</a></p>
+    </footer>
+  </body>
+</html>
