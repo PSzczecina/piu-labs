@@ -1,0 +1,174 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  background-color: aliceblue;
+}
+legend {
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.container {
+  justify-content: space-between;
+  display: flex;
+  text-align: center;
+  align-content: space-between;
+}
+fieldset {
+  padding: 0;
+  padding-bottom: 1rem;
+  margin-bottom: 4vh;
+  text-align: left;
+}
+
+.container,
+fieldset {
+  background-color: beige;
+  border: 2px solid brown;
+  border-radius: 5px;
+  .item {
+    justify-content: center;
+    height: 4vh;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    color: white;
+  }
+}
+
+/**/
+body:has([value='blue']:checked) .container {
+  .item {
+    background-color: blue;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+    .item {
+      width: 45%;
+      flex-grow: 2;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    .item {
+      width: 25%;
+      flex-shrink: 1;
+    }
+  }
+}
+
+body:has([value='red']:checked) .container {
+  .item {
+    &:nth-child(4),
+    &:nth-child(5) {
+      order: 3;
+    }
+    background-color: red;
+  }
+  > .item:first-child {
+    font-weight: bold;
+    order: 2;
+    position: relative;
+    &::after {
+      text-align: center;
+      position: absolute;
+      font-weight: normal;
+      content: ' (jestem większy i na środku)';
+      bottom: 20px;
+      right: 0.7em;
+      left: 0.7em;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .item {
+      flex-grow: 2;
+    }
+    .item:first-child {
+      flex-grow: 3;
+    }
+  }
+  @media (max-width: 1024px) {
+    flex-wrap: wrap;
+    .item {
+      flex-grow: 1;
+    }
+    .item:first-child {
+      width: 100%;
+    }
+  }
+}
+
+body:has([value='green']:checked) .container {
+  .item {
+    position: relative;
+    background-color: green;
+    flex-grow: 1;
+  }
+  .item:first-child {
+    &::before {
+      position: absolute;
+      font-size: 2rem;
+      left: 10%;
+      content: '😃';
+    }
+    &::after {
+      font-size: 2rem;
+      position: absolute;
+      content: '😃';
+      right: 10%;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .item:first-child {
+      flex-grow: 5;
+      + .item {
+        flex-grow: 4;
+        + .item {
+          flex-grow: 3;
+          + .item {
+            flex-grow: 2;
+            + .item {
+              flex-grow: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    .item:first-child {
+      order: 5;
+      width: 85%;
+      + .item {
+        order: 4;
+        width: 70%;
+        + .item {
+          order: 3;
+          width: 55%;
+          + .item {
+            width: 40%;
+            order: 2;
+            + .item {
+              width: 25%;
+            }
+          }
+        }
+      }
+    }
+  }
+} /*boję sie tych klamr*/
