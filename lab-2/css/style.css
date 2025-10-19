@@ -1,6 +1,6 @@
 /* Minimalny reset  */
 html {
-  font-size: 16px; /* bazowy rozmiar czcionki */
+  font-size: 3vh; /* bazowy rozmiar czcionki */
   font-family: system-ui, sans-serif; /* font systemowy */
   line-height: 1.5; /* lepsza czytelność */
 }
@@ -11,6 +11,11 @@ body {
   background-image: linear-gradient(-10deg, lightblue, azure, pink);
   margin: 1rem;
   padding: 0;
+  > a {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+  }
 }
 
 h1 {
@@ -19,7 +24,7 @@ h1 {
     'Lucida Sans', Arial, sans-serif;
 }
 
-a {
+nav a {
   border-left: 1px solid darkred;
   padding-left: 20px;
   padding-right: 20px;
@@ -27,8 +32,8 @@ a {
   color: #0066cc; /* niebieski kolor linków */
   text-decoration: none; /* bez podkreślenia */
   font-size: 1.4rem;
-}
-a:hover {
-  color: darkblue;
-  text-decoration: underline; /* podkreślenie przy najechaniu */
+  &:hover {
+    color: darkblue;
+    text-decoration: underline; /* podkreślenie przy najechaniu */
+  }
 }

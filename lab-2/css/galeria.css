@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(20deg, pink, slateblue);
+  background-attachment: fixed;
+}
+
+header {
+  z-index: 1;
+  position: fixed;
+  width: 100vw;
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.65) 80%,
+    gray
+  );
+  border-bottom: 5px solid slateblue;
+  padding: 20px;
+  margin-top: -100px;
+  font-size: 30px;
+}
+
+footer {
+  color: white;
+  font-size: 16px;
+  letter-spacing: 5px;
+  height: 5vh;
+  padding: 1vh;
+  background-color: slateblue;
+  a {
+    right: 45%;
+    bottom: 40%;
+    position: relative;
+    color: darkviolet;
+    text-decoration: none;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
+
+main {
+  display: grid;
+  margin: 100px 5vw;
+  justify-content: center;
+
+  @media (max-width: 1199px) {
+    grid-template-columns: 100%;
+  }
+  @media (min-width: 1200px) {
+    grid-template-columns: 50% 50%;
+  }
+
+  figure {
+    display: inline-block;
+    background-image: radial-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 70%);
+    border-left: 2px solid slateblue;
+    border-right: 2px solid slateblue;
+    border-bottom: 2px solid darkviolet;
+    border-radius: 10px;
+    position: relative;
+    margin: 20px;
+    figcaption {
+      opacity: 0;
+      color: black;
+      text-shadow: 0px 0px 10px white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 50px;
+      transform: translate(-50%, -50%);
+    }
+
+    img {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: relative;
+      transition: border-color 0.6s, opacity 0.6s;
+      border-color: rgba(0, 0, 0, 0);
+      padding: 2px;
+      border-radius: 50px;
+      width: 100%;
+      opacity: 1;
+    }
+
+    &:hover {
+      cursor: crosshair;
+      figcaption {
+        opacity: 1;
+      }
+      img {
+        transition: border-color 0.2s, opacity 0.2s;
+        border: 2px solid;
+        border-color: black;
+        opacity: 0.6;
+        padding: 0px;
+      }
+    }
+  }
+}
