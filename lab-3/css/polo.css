@@ -3,6 +3,12 @@
   --blue: blue;
   --green: green;
   --yellow: rgb(226, 188, 0);
+
+  --redhover: darkred;
+  --bluehover: darkblue;
+  --greenhover: darkgreen;
+  --yellowhover: darkgoldenrod;
+
   --placeholdercolor: magenta;
 }
 
@@ -36,7 +42,7 @@ a {
 
 main {
   width: auto;
-  padding-top: 30px;
+  padding: 30px calc(20vw - 125px);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
