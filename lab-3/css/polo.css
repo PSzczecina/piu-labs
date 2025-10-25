@@ -1,0 +1,246 @@
+:root {
+  --red: red;
+  --blue: blue;
+  --green: green;
+  --yellow: rgb(226, 188, 0);
+  --placeholdercolor: magenta;
+}
+
+body {
+  margin: 0;
+  font-size: 15px;
+  font-family: system-ui, sans-serif;
+  overflow-x: hidden;
+  background-color: gainsboro;
+}
+
+a {
+  display: block;
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  text-decoration: none;
+  background-color: wheat;
+  border: 1px solid black;
+  transition: background-color 0.1s, color 0.1s, border-color 0.1s;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+  &:hover {
+    background-color: goldenrod;
+    color: white;
+    border-color: white;
+    transition: background-color 0.1s, color 0.1s, border-color 0.1s;
+  }
+}
+
+main {
+  width: auto;
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: gainsboro;
+}
+picture {
+  border-radius: 10px;
+  background-color: white;
+  background-position: center;
+  background-size: 100%;
+  margin: 2vw;
+  width: min(90vw, 500px);
+  height: min(90vw, 500px);
+
+  img {
+    width: 100%;
+  }
+  border: 2px solid var(--placeholdercolor);
+}
+h1 {
+  display: inline;
+}
+
+h2 {
+  margin: 0;
+  font-size: 15px;
+  color: white;
+  display: inline;
+  float: right;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: var(--placeholdercolor);
+}
+
+h4 {
+  font-size: 25px;
+  margin: 15px;
+}
+
+section {
+  padding: 2vw;
+  width: 300px;
+}
+
+.radiosegsize,
+.radiosegcolor {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  label {
+    text-align: center;
+  }
+}
+
+.radiosegcolor {
+  label {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    display: inline;
+    margin: 0 auto;
+    padding: 5px;
+    color: white;
+    &:hover {
+      cursor: pointer;
+    }
+    border-radius: 50%;
+    border: 2px solid black;
+    /*nwm dziwnie to wygląda, ale działa*/
+    &:has(.checkred) {
+      background-color: var(--red);
+    }
+    &:has(.checkblue) {
+      background-color: var(--blue);
+    }
+    &:has(.checkgreen) {
+      background-color: var(--green);
+    }
+    &:has(.checkyellow) {
+      background-color: var(--yellow);
+    }
+
+    &:has(input:checked) {
+      span {
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-color: rgba(0, 0, 0, 0);
+        border: 5px solid white;
+        border-radius: 50%;
+        margin: 50% 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+}
+
+.radiosegsize {
+  label {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    display: inline;
+    margin: 0 auto;
+    padding: 5px;
+    color: black;
+    border: 3px solid black;
+    border-radius: 10px;
+    &:hover {
+      cursor: pointer;
+    }
+    background-color: white;
+    &:has(input:checked) {
+      background-color: var(--placeholdercolor);
+    }
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+}
+
+button {
+  color: white;
+  font-weight: bold;
+  margin: 0 50%;
+  transform: translate(-50%, 0);
+  min-width: 200px;
+  padding: 20px;
+  width: 15vw;
+  font-size: 20px;
+  border-radius: 15px;
+  &::before {
+    content: '🛒   ';
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  background-color: var(--placeholdercolor);
+}
+h3 {
+  font-size: 20px;
+  text-align: center;
+  margin: 20px 50%;
+  transform: translate(-50%, 0);
+  width: 15vw;
+  min-width: 100px;
+}
+
+/*kod zajmujący się ogarnianiem rzeczy zależnie od wybranego koloru*/
+main {
+  &:has(.checkblue:checked) {
+    button,
+    h2,
+    .radiosegsize label:has(input:checked) {
+      background-color: blue;
+    }
+    picture {
+      border-color: blue;
+      content: url('../polo/polo_b.png');
+    }
+  }
+  &:has(.checkred:checked) {
+    button,
+    h2,
+    .radiosegsize label:has(input:checked) {
+      background-color: var(--red);
+    }
+    picture {
+      border-color: var(--red);
+      content: url('../polo/polo_r.png');
+    }
+  }
+  &:has(.checkgreen:checked) {
+    button,
+    h2,
+    .radiosegsize label:has(input:checked) {
+      background-color: var(--green);
+    }
+    picture {
+      border-color: var(--green);
+      content: url('../polo/polo_g.png');
+    }
+  }
+  &:has(.checkyellow:checked) {
+    button,
+    h2,
+    .radiosegsize label:has(input:checked) {
+      background-color: var(--yellow);
+    }
+    picture {
+      border-color: var(--yellow);
+      content: url('../polo/polo_y.png');
+    }
+  }
+}
