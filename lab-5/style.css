@@ -1,0 +1,100 @@
+body {
+  background-image: linear-gradient(beige, darkkhaki);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  display: grid;
+  grid-template-columns: max(200px, 15%) auto;
+  grid-template-rows: 200px auto;
+  overflow-x: hidden;
+
+  font-family: system-ui;
+  font-weight: bold;
+}
+
+.board {
+  justify-self: center;
+  grid-row-end: span 2;
+  float: none;
+  border: 2px dashed black;
+  margin: 10px auto;
+  margin-bottom: 50px;
+  min-height: 470px;
+  width: clamp(240px, 80%, 930px);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-content: flex-start;
+
+  background-color: darkkhaki;
+}
+
+.square,
+.circle {
+  box-sizing: border-box;
+  border: 5px solid black;
+  &:hover {
+    transition: border 0.2s ease-out;
+    cursor: pointer;
+    border: 2px solid gray;
+  }
+  width: 75px;
+  height: 75px;
+  flex-basis: auto;
+  margin: 1px;
+}
+.circle {
+  border-radius: 50%;
+}
+
+button {
+  background-color: khaki;
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  width: 200px;
+  height: 30px;
+  margin: 10px 0;
+  text-align: center;
+  &:hover {
+    cursor: pointer;
+    background-color: darkkhaki;
+    color: white;
+  }
+}
+menu {
+  float: none;
+  margin: 1px;
+  padding: 0;
+}
+
+section {
+  grid-row-start: 2;
+  float: left;
+  p {
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: system-ui;
+  }
+}
+
+footer {
+  border-top: 2px solid black;
+  padding-top: 10px;
+  text-align: center;
+  background-color: khaki;
+  height: 40px;
+  left: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  a {
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    &:hover {
+      color: purple;
+    }
+  }
+}
