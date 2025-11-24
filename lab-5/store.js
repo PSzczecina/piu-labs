@@ -7,6 +7,7 @@ class Store {
 
     constructor() {
         this.#shapeList = JSON.parse(localStorage.getItem('listOfShapes'));
+        if (!this.#shapeList) this.#shapeList = new Array();
     }
 
     subscribe(callback) {
