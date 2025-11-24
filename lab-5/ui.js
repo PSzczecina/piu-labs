@@ -22,6 +22,9 @@ board.addEventListener('click', (e) => {
 
 //nie tylko subskrybuje, ale od razu definiuje co ma zrobić bo dostaniu update'a
 store.subscribe((value) => {
+    if (!value) {
+        return;
+    }
     let cirCount = 0,
         squCount = 0;
     for (let i = 0; i < value.length; i++) {
