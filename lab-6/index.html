@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <menu>
+      <button id="getButton">zaciągnij z bazy</button>
+      <button id="errButton">zaciągnij z bazy (błąd)</button>
+      <button id="resetButton">wyczyść z ekranu</button>
+      <button id="errResetButton">wyczyść z listy błędów</button>
+      <label for="getLimit">Limit wyświetleń:</label>
+      <input id="getLimit" type="number" max="50" min="0" />
+    </menu>
+    <section id="mainSection">
+      <p id="loader">ładowanie...</p>
+      <div id="getContent"></div>
+    </section>
+    <section id="errList"></section>
+  </body>
+</html>
